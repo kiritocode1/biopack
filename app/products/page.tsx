@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import { ArrowUpRight, Filter, SlidersHorizontal } from 'lucide-react';
 
 const allProducts = [
@@ -92,7 +93,7 @@ export default function ProductsPage() {
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProducts.map((product) => (
-              <div key={product.id} className="group relative cursor-pointer">
+              <Link href={`/products/${product.id}`} key={product.id} className="group relative cursor-pointer">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-bio-deep/10 border border-bio-deep/20 mb-6 relative">
                    <div className={`absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500 bg-gradient-to-br ${product.gradient}`} />
                    
@@ -121,7 +122,7 @@ export default function ProductsPage() {
                   </div>
                   <p className="text-bio-light/40 text-sm line-clamp-2">{product.description}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

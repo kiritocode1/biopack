@@ -30,7 +30,7 @@ export default function Hero() {
 
 					<h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-bio-light leading-[0.9]">
 						BIOPACK 
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-bio-primary via-bio-accent to-bio-primary bg-[length:200%_auto] animate-bg-pan">.</span>
+						<span className="text-transparent bg-clip-text bg-linear-to-r from-bio-primary via-bio-accent to-bio-primary bg-[length:200%_auto] animate-bg-pan">.</span>
 					</h1>
 
 					<p className="text-xl md:text-2xl font-light text-bio-light/60 mb-10 max-w-xl leading-relaxed">
