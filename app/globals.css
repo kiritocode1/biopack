@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #050e05;
+	--foreground: #f4fbfe;
+
+	/* Custom Palette */
+	--color-bio-dark: #050e05;
+	--color-bio-deep: #1f4e3b;
+	--color-bio-primary: #358c84;
+	--color-bio-accent: #58ccde;
+	--color-bio-light: #f4fbfe;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+
+	--color-bio-dark: var(--color-bio-dark);
+	--color-bio-deep: var(--color-bio-deep);
+	--color-bio-primary: var(--color-bio-primary);
+	--color-bio-accent: var(--color-bio-accent);
+	--color-bio-light: var(--color-bio-light);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #050e05;
+		--foreground: #f4fbfe;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+}
+
+@keyframes background-pan {
+	0% {
+		background-position: 0% center;
+	}
+	100% {
+		background-position: 200% center;
+	}
+}
+
+.animate-bg-pan {
+	animation: background-pan 20s linear infinite;
 }
