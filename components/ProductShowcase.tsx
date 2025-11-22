@@ -1,4 +1,4 @@
-import { ArrowUpRight, Package, Truck, ShieldCheck } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const products = [
@@ -38,12 +38,7 @@ const products = [
 		gradient: "from-bio-accent/20 to-bio-primary/20",
 		span: "col-span-1 md:col-span-2",
 		height: "h-[300px]",
-		icon: (
-			<Package
-				className="text-bio-primary"
-				size={32}
-			/>
-		),
+		icon: null,
 	},
 	{
 		id: 5,
@@ -53,12 +48,7 @@ const products = [
 		gradient: "from-bio-deep/40 to-bio-dark",
 		span: "col-span-1",
 		height: "h-[300px]",
-		icon: (
-			<ShieldCheck
-				className="text-bio-accent"
-				size={32}
-			/>
-		),
+		icon: null,
 	},
 	{
 		id: 6,
@@ -69,12 +59,7 @@ const products = [
 		span: "col-span-1 md:col-span-3",
 		height: "h-[250px]",
 		isSpecial: true,
-		icon: (
-			<Truck
-				className="text-bio-light"
-				size={32}
-			/>
-		),
+		icon: null,
 	},
 ];
 
@@ -122,10 +107,10 @@ export default function ProductShowcase() {
 									)}
 								</div>
 
-								{/* Center Visual for Bento items */}
-								{product.id > 3 && (
+								{/* Center Visual for Bento items - Removed Icons */}
+								{/* {product.id > 3 && (
 									<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50 group-hover:scale-110 transition-transform duration-500">{product.icon}</div>
-								)}
+								)} */}
 
 								{/* Bottom Info */}
 								<div className={`${product.isSpecial ? "flex items-end justify-between w-full" : ""}`}>
@@ -139,7 +124,7 @@ export default function ProductShowcase() {
 							</div>
 
 							{/* Decorative Elements for first 3 items */}
-							{product.id <= 3 && (
+							{product.id <= 6 && (
 								<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 									<div className={`w-32 h-32 rounded-full bg-linear-to-tr ${product.gradient} blur-2xl opacity-20 group-hover:scale-150 transition-transform duration-700`} />
 								</div>
