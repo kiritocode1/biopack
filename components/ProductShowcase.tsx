@@ -31,7 +31,9 @@ export default function ProductShowcase() {
         <div className="flex justify-between items-end mb-16">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-bio-light mb-4">Featured <span className="text-bio-primary">Solutions</span></h2>
-            <p className="text-bio-light/60 max-w-md">Sustainable packaging designed for the modern commerce era.</p>
+            <p className="text-bio-light/60 max-w-md">
+              Crafted from 100% natural plant fibers. Our eco-friendly solutions are designed for the modern commerce era, utilizing renewable materials to meet your everyday needs.
+            </p>
           </div>
           <button className="hidden md:flex items-center gap-2 text-bio-accent hover:text-bio-light transition-colors">
             View Catalog <ArrowUpRight size={20} />

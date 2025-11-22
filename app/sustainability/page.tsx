@@ -55,7 +55,7 @@ export default function SustainabilityPage() {
                <div>
                   <h2 className="text-4xl md:text-5xl font-bold text-bio-light mb-6">Designed to <span className="text-bio-primary">Disappear</span></h2>
                   <p className="text-bio-light/60 text-lg mb-8 leading-relaxed">
-                     Our materials are sourced from regenerative plants like corn, beets, and wood pulp. They are designed to break down naturally within 90-180 days, turning into nutrient-rich soil.
+                     Crafted from 100% natural plant fibers, our products offer an eco-friendly solution for everyday needs. By utilizing renewable materials like corn, beets, and wood pulp, we ensure every package returns to the earth, turning into nutrient-rich soil.
                   </p>
                   
                   <div className="space-y-6">
