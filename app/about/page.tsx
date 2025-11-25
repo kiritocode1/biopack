@@ -1,75 +1,156 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+import { Factory, Users, TrendingUp, Globe, Award, Leaf, ShieldCheck, Recycle } from "lucide-react";
 
 export default function AboutPage() {
   return (
 		<main className="bg-bio-dark min-h-screen selection:bg-bio-primary selection:text-bio-dark">
 			<Navbar />
 
-			{/* Header */}
+			{/* Header & Vision */}
 			<section className="pt-40 pb-20 px-6 text-center relative overflow-hidden">
 				<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-bio-deep/20 via-bio-dark to-bio-dark -z-10" />
 
-				<h1 className="text-6xl md:text-9xl font-black text-bio-light tracking-tighter mb-8 opacity-90">
-					BIOPACK<span className="text-bio-primary">.</span>
-				</h1>
-				<p className="text-2xl text-bio-light/60 max-w-2xl mx-auto">We are a collective of designers, engineers, and environmentalists obsessed with solving the packaging problem.</p>
-			</section>
-
-			{/* Story */}
-			<section className="py-24 px-6 bg-bio-light/5">
-				<div className="max-w-4xl mx-auto">
-					<h2 className="text-3xl font-bold text-bio-light mb-8 border-l-4 border-bio-primary pl-6">The Story</h2>
-					<div className="prose prose-invert prose-lg max-w-none text-bio-light/70">
-						<p className="mb-6">
-							It started with a simple observation: why does a product used for 3 days last for 300 years in a landfill? The disconnect between the lifespan of packaging and its material
-							durability was a design flaw we couldn&apos;t ignore.
-						</p>
-						<p className="mb-6">
-							In 2023, we set out to engineer materials that perform like plastic but behave like plants. After years of R&D, we developed our proprietary bio-polymers derived from
-							agricultural waste.
-						</p>
-						<p>
-							Today, BIOPACK is trusted by over 10,000 brands worldwide who share our vision. We&apos;re not just selling boxes; we&apos;re selling a promise to the future. A promise that
-							convenience doesn&apos;t have to cost the Earth.
-						</p>
-					</div>
+				<div className="mb-12 flex justify-center">
+					<Image 
+						src="/logo.png" 
+						alt="Biopack Logo" 
+						width={600} 
+						height={200} 
+						className="h-32 md:h-64 w-auto object-contain"
+						priority
+					/>
 				</div>
+				
+                <div className="max-w-4xl mx-auto mt-12 p-8 bg-bio-light/5 rounded-3xl border border-bio-light/10 backdrop-blur-sm">
+                    <h2 className="text-bio-accent text-sm font-bold tracking-widest uppercase mb-4">Our Vision</h2>
+                    <p className="text-2xl md:text-3xl font-medium text-bio-light leading-relaxed">
+                        &quot;To create a cleaner, greener, and plastic-free future through high-quality, certified compostable products that protect the planet and support sustainable living.&quot;
+                    </p>
+                </div>
 			</section>
 
-			{/* Team / Values */}
-			<section className="py-32 px-6">
+			{/* Economy Contribution */}
+			<section className="py-24 px-6">
 				<div className="max-w-7xl mx-auto">
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-						<div>
-							<h2 className="text-4xl font-bold text-bio-light mb-12">Our Values</h2>
-							<div className="space-y-12">
-								<div>
-									<h3 className="text-2xl font-bold text-bio-primary mb-2">01. Radical Transparency</h3>
-									<p className="text-bio-light/60">We share everything. Our supply chain, our ingredients, and our impact reports are open for all to see.</p>
-								</div>
-								<div>
-									<h3 className="text-2xl font-bold text-bio-accent mb-2">02. Design First</h3>
-									<p className="text-bio-light/60">Sustainability shouldn&apos;t be ugly. We prioritize aesthetics and user experience in every product we create.</p>
-								</div>
-								<div>
-									<h3 className="text-2xl font-bold text-bio-light mb-2">03. Nature as Mentor</h3>
-									<p className="text-bio-light/60">We look to biology for design solutions. Nature has had 3.8 billion years of R&D; we&apos;re just catching up.</p>
-								</div>
-							</div>
-						</div>
-
-						<div className="bg-bio-deep/10 rounded-3xl p-12 border border-bio-deep/20 flex flex-col justify-center items-center text-center">
-							<h3 className="text-3xl font-bold text-bio-light mb-6">Join the movement</h3>
-							<p className="text-bio-light/60 mb-8 max-w-md">Ready to switch your business to sustainable packaging? Let&apos;s talk about custom solutions for your brand.</p>
-							<button className="px-8 py-4 rounded-full bg-bio-primary text-bio-dark font-bold text-lg hover:bg-bio-accent transition-all w-full sm:w-auto">Get in Touch</button>
-						</div>
-					</div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 className="text-4xl font-bold text-bio-light mb-8">Powering the <span className="text-bio-primary">Indian Economy</span></h2>
+                            <div className="space-y-8">
+                                <div className="flex gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-bio-primary/10 flex items-center justify-center text-bio-primary shrink-0">
+                                        <Factory size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-bio-light mb-2">Supports Make in India</h3>
+                                        <p className="text-bio-light/60">We manufacture bags using Indian labour, machinery, and technology, fostering local industrial growth.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-bio-accent/10 flex items-center justify-center text-bio-accent shrink-0">
+                                        <Users size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-bio-light mb-2">Creates Employment</h3>
+                                        <p className="text-bio-light/60">Generating jobs across manufacturing, packaging, sales, and distribution sectors.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-bio-deep/30 flex items-center justify-center text-bio-light shrink-0">
+                                        <TrendingUp size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-bio-light mb-2">Boosts MSME Growth</h3>
+                                        <p className="text-bio-light/60">Helping expand the MSME sector across many states through compostable bag manufacturing units.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-bio-light/10 flex items-center justify-center text-bio-light shrink-0">
+                                        <Globe size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-bio-light mb-2">Reduces Plastic Import</h3>
+                                        <p className="text-bio-light/60">Compostable bags reduce India’s dependency on conventional plastic materials.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="relative h-[600px] bg-bio-deep/5 rounded-3xl border border-bio-deep/20 overflow-hidden p-8 flex flex-col justify-center">
+                             <div className="absolute inset-0 bg-gradient-to-br from-bio-deep/20 to-transparent opacity-50" />
+                             <h3 className="relative z-10 text-2xl font-bold text-bio-light mb-6">Supporting Government Policies</h3>
+                             <ul className="relative z-10 space-y-4">
+                                <li className="flex items-center gap-3 text-bio-light/80 bg-bio-dark/40 p-4 rounded-xl border border-bio-light/5">
+                                    <ShieldCheck className="text-bio-primary" size={20} /> Swachh Bharat Abhiyan
+                                </li>
+                                <li className="flex items-center gap-3 text-bio-light/80 bg-bio-dark/40 p-4 rounded-xl border border-bio-light/5">
+                                    <ShieldCheck className="text-bio-primary" size={20} /> Plastic Ban Initiatives
+                                </li>
+                                <li className="flex items-center gap-3 text-bio-light/80 bg-bio-dark/40 p-4 rounded-xl border border-bio-light/5">
+                                    <ShieldCheck className="text-bio-primary" size={20} /> Sustainable Development Goals
+                                </li>
+                             </ul>
+                        </div>
+                    </div>
 				</div>
 			</section>
+
+            {/* Environmental Impact */}
+            <section className="py-24 px-6 bg-bio-light/5">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold text-bio-light mb-6">Contribution to the <span className="text-bio-accent">Environment</span></h2>
+                        <p className="text-xl text-bio-light/60 max-w-3xl mx-auto">
+                            Our products are designed to return to the earth, leaving no trace behind.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all group">
+                            <div className="w-14 h-14 bg-bio-primary/10 rounded-full flex items-center justify-center text-bio-primary mb-6 group-hover:scale-110 transition-transform">
+                                <Leaf size={28} />
+                            </div>
+                            <h3 className="text-xl font-bold text-bio-light mb-4">Reduces Plastic Pollution</h3>
+                            <p className="text-bio-light/60">Compostable bags decompose within 90–180 days in composting conditions.</p>
+                        </div>
+                        <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all group">
+                             <div className="w-14 h-14 bg-bio-accent/10 rounded-full flex items-center justify-center text-bio-accent mb-6 group-hover:scale-110 transition-transform">
+                                <Recycle size={28} />
+                            </div>
+                            <h3 className="text-xl font-bold text-bio-light mb-4">No Toxic Residue</h3>
+                            <p className="text-bio-light/60">They leave behind biomass + water + CO₂, not microplastics.</p>
+                        </div>
+                        <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all group">
+                             <div className="w-14 h-14 bg-bio-deep/30 rounded-full flex items-center justify-center text-bio-light mb-6 group-hover:scale-110 transition-transform">
+                                <Factory size={28} />
+                            </div>
+                            <h3 className="text-xl font-bold text-bio-light mb-4">Lower Carbon Footprint</h3>
+                            <p className="text-bio-light/60">Production and disposal contribute less CO₂ compared to conventional plastic.</p>
+                        </div>
+                         <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all group">
+                             <div className="w-14 h-14 bg-bio-light/10 rounded-full flex items-center justify-center text-bio-light mb-6 group-hover:scale-110 transition-transform">
+                                <Leaf size={28} />
+                            </div>
+                            <h3 className="text-xl font-bold text-bio-light mb-4">Renewable Resources</h3>
+                            <p className="text-bio-light/60">Plant-based raw materials reduce use of fossil fuels.</p>
+                        </div>
+                         <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all group">
+                             <div className="w-14 h-14 bg-bio-primary/10 rounded-full flex items-center justify-center text-bio-primary mb-6 group-hover:scale-110 transition-transform">
+                                <Recycle size={28} />
+                            </div>
+                            <h3 className="text-xl font-bold text-bio-light mb-4">Supports Waste Segregation</h3>
+                            <p className="text-bio-light/60">Green compostable bags are ideal for wet waste, improving compost quality.</p>
+                        </div>
+                        <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all group flex flex-col justify-center items-center text-center">
+                             <Award size={48} className="text-bio-accent mb-4" />
+                             <h3 className="text-xl font-bold text-bio-light mb-2">Certified Quality</h3>
+                             <p className="text-bio-light/60">IS/ISO 17088 & CPCB Approved</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 			<Footer />
 		</main>
   );
 }
-

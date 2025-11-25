@@ -1,0 +1,42 @@
+# Historical Context
+
+## [2025-11-25]
+### Switched to White Mode
+- Inverted global CSS variables in `app/globals.css` to support light mode by default.
+    - `--background` set to `#f4fbfe` (light).
+    - `--foreground` set to `#050e05` (dark).
+    - Swapped `--color-bio-dark` and `--color-bio-light` values.
+- Removed dark mode media query from `app/globals.css` to enforce light mode.
+- Updated `components/GenerativeArtBackground.tsx` and `components/GenerativeArtCard.tsx` to use light background color (`rgb(244, 251, 254)`).
+- Updated `components/Footer.tsx` to explicitly use Dark Footer styling using Arbitrary Values to bypass variable confusion/conflicts.
+    - Hardcoded Background to `#050e05` (Dark).
+    - Hardcoded Text to `#f4fbfe` (Light) and its opacity variants.
+- Reverted `components/FooterBackground.tsx` to Dark Mode settings to match the Footer container.
+    - `renderer.setClearColor` back to `#050e05`.
+    - Restored additive shader logic for glowing trails on dark background.
+
+### TypeScript Fixes
+- Installed `@types/p5` (v1.7.0) to provide proper type definitions for `p5` objects.
+- Updated `components/GenerativeArtBackground.tsx` and `components/GenerativeArtCard.tsx`:
+    - Imported `p5Types` from `p5`.
+    - Replaced `any` type on `p5` parameters with `p5Types` to resolve linting errors and ensure type safety.
+
+### Content Updates
+- **About Page (`app/about/page.tsx`)**:
+    - Added "Our Vision" section.
+    - Added "Powering the Indian Economy" section (Make in India, Employment, MSME Growth, etc.).
+    - Fixed missing `Recycle` icon import.
+- **Products Page (`app/products/page.tsx`)**:
+    - Updated product list to include 7 specific items (Grocery Bags, Carry Bags, Garbage Bags, E-commerce Mailers, Shopping Bags, Mulch Films, Food Packaging Liners).
+    - Added "Plant-Based Solutions" header with material details (Corn starch, PLA + PBAT).
+    - Added "Why Choose Biopack?" section covering Quality, Certifications, Branding, Trust, and Innovation.
+- **Sustainability Page (`app/sustainability/page.tsx`)**:
+    - Added "Positive Impact" section detailing Contribution to Environment (Reduces Pollution, No Toxic Residue, Renewable Resources, Waste Segregation, Lower Carbon Footprint).
+    - Added "Certified Excellence" section (CPCB Approved, IS/ISO 17088 Compliant).
+
+### Branding Updates
+- Replaced "BIOPACK" text with the Logo Image (`public/logo.png`) in:
+    - **Navbar.tsx**: Replaced text brand with logo image.
+    - **Hero.tsx**: Replaced main H1 text with logo image.
+    - **Footer.tsx**: Replaced top-left brand text and bottom huge animated typography with logo image.
+    - **About Page**: Replaced header H1 text with logo image.

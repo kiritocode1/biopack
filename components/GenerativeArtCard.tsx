@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import p5Types from "p5";
 
 // Dynamically import Sketch to disable SSR, as p5.js relies on window
 const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
@@ -34,14 +35,14 @@ export default function GenerativeArtCard() {
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
-	const setup = (p5: any, canvasParentRef: Element) => {
+	const setup = (p5: p5Types, canvasParentRef: Element) => {
 		p5.createCanvas(dimensions.width || p5.windowWidth, dimensions.height || p5.windowHeight).parent(canvasParentRef);
-		p5.background(5, 14, 5); // Matches bg-bio-dark (#050E05)
+		p5.background(244, 251, 254); // Matches new light bg (#f4fbfe)
 	};
 
-	const draw = (p5: any) => {
+	const draw = (p5: p5Types) => {
 		// Semi-transparent background for trail effect
-		p5.background(5, 14, 5, 25);
+		p5.background(244, 251, 254, 25);
 
 		// Center drawing based on current canvas size
 		p5.translate(p5.width / 2, p5.height / 2);
@@ -98,7 +99,7 @@ export default function GenerativeArtCard() {
 		}
 	};
 
-	const windowResized = (p5: any) => {
+	const windowResized = (p5: p5Types) => {
 		if (containerRef.current) {
 			p5.resizeCanvas(containerRef.current.offsetWidth, containerRef.current.offsetHeight);
 		}

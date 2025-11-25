@@ -42,7 +42,7 @@ export default function FooterBackground({ className }: FooterBackgroundProps) {
 			powerPreference: "high-performance",
 		});
 		renderer.setPixelRatio(pixelRatio);
-		renderer.setClearColor(0x050e05, 1); // Match bio-dark background
+		renderer.setClearColor(0x050e05, 1); // Match Dark Background (#050e05)
 		container.appendChild(renderer.domElement);
 
 		const scene = new THREE.Scene();

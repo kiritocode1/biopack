@@ -1,56 +1,64 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { ArrowUpRight, Filter, SlidersHorizontal } from 'lucide-react';
+import { ArrowUpRight, Filter, SlidersHorizontal, CheckCircle, ShieldCheck, Star, Zap, Truck, Package, Sprout } from 'lucide-react';
 
 const allProducts = [
   {
     id: 1,
-    name: "Compostable Mailers",
-    price: "$24.00",
-    category: "Shipping",
+    name: "Grocery Bags",
+    price: "Custom Quote",
+    category: "Retail",
     gradient: "from-bio-deep to-bio-primary",
-    description: "Durable, water-resistant, and 100% compostable mailers for all your shipping needs."
+    description: "Certified compostable grocery bags. Strong, durable, and perfect for daily use. CPCB approved."
   },
   {
     id: 2,
-    name: "Plant-Based Tape",
-    price: "$12.50",
-    category: "Accessories",
+    name: "Carry Bags",
+    price: "Custom Quote",
+    category: "Everyday",
     gradient: "from-bio-primary to-bio-accent",
-    description: "Strong adhesive tape made from renewable plant resources. Fully biodegradable."
+    description: "Eco-friendly carry bags made from plant-based materials. Tear-resistant and reliable."
   },
   {
     id: 3,
-    name: "Recycled Boxes",
-    price: "$36.00",
-    category: "Shipping",
+    name: "Garbage Bags",
+    price: "Custom Quote",
+    category: "Waste Management",
     gradient: "from-bio-dark to-bio-deep",
-    description: "Sturdy shipping boxes made from 100% post-consumer recycled materials."
+    description: "Green waste collection bags. Ideal for wet waste and home composting. 100% biodegradable."
   },
   {
     id: 4,
-    name: "Biodegradable Peanuts",
-    price: "$18.00",
-    category: "Fillers",
+    name: "E-commerce Mailers",
+    price: "Custom Quote",
+    category: "Shipping",
     gradient: "from-bio-accent to-bio-light",
-    description: "Dissolvable packing peanuts made from cornstarch. Safe for the environment."
+    description: "Durable packaging bags for online retail. Secure, waterproof, and compostable."
   },
   {
     id: 5,
-    name: "Hemp Twine",
-    price: "$8.00",
-    category: "Accessories",
+    name: "Shopping Bags",
+    price: "Custom Quote",
+    category: "Retail",
     gradient: "from-bio-deep to-bio-accent",
-    description: "Natural hemp fiber twine for secure and eco-friendly bundling."
+    description: "Premium shopping bags for brands. Customizable with your logo and certificate number."
   },
   {
     id: 6,
-    name: "Kraft Paper Roll",
-    price: "$45.00",
-    category: "Wrapping",
+    name: "Mulch Films",
+    price: "Custom Quote",
+    category: "Agriculture",
     gradient: "from-bio-primary to-bio-dark",
-    description: "Heavy-duty kraft paper for wrapping and void fill. Recyclable and compostable."
+    description: "Biodegradable mulch films for agriculture. Decomposes in soil, enriching it."
+  },
+  {
+    id: 7,
+    name: "Food Packaging Liners",
+    price: "Custom Quote",
+    category: "Food Service",
+    gradient: "from-bio-accent to-bio-primary",
+    description: "Safe, non-toxic liners for food packaging. Made from corn starch and PLA."
   }
 ];
 
@@ -64,12 +72,21 @@ export default function ProductsPage() {
          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-bio-primary/10 rounded-full blur-[120px] -z-10" />
          <div className="max-w-7xl mx-auto">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-bio-primary/30 bg-bio-primary/10 backdrop-blur-sm">
-              <span className="text-bio-accent text-sm font-medium tracking-wide uppercase">Our Collection</span>
+              <span className="text-bio-accent text-sm font-medium tracking-wide uppercase">Our Product</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-bio-light mb-6">Sustainable <span className="text-bio-primary">Essentials</span></h1>
-            <p className="text-xl text-bio-light/60 max-w-2xl">
-              Everything you need to package your products responsibly. No plastic, no waste, just nature-backed solutions.
+            <h1 className="text-5xl md:text-7xl font-bold text-bio-light mb-6">Plant-Based <span className="text-bio-primary">Solutions</span></h1>
+            <p className="text-xl text-bio-light/60 max-w-3xl mb-8">
+              Our company manufactures certified compostable bags, made from plant-based materials such as 
+              <span className="text-bio-accent font-medium"> Corn starch, PLA + PBAT, and other biodegradable biopolymers.</span>
             </p>
+            <div className="flex flex-wrap gap-4 text-sm text-bio-light/80">
+                <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-bio-light/5 border border-bio-light/10">
+                    <CheckCircle size={14} className="text-bio-primary" /> IS/ISO 17088 Compliant
+                </span>
+                <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-bio-light/5 border border-bio-light/10">
+                    <CheckCircle size={14} className="text-bio-primary" /> CPCB Approved
+                </span>
+            </div>
          </div>
       </section>
 
@@ -100,7 +117,8 @@ export default function ProductsPage() {
                    <div className="absolute inset-0 flex items-center justify-center">
                       <div className={`w-32 h-32 rounded-full bg-gradient-to-tr ${product.gradient} blur-2xl opacity-40 group-hover:scale-150 transition-transform duration-700`} />
                       <div className="relative z-10 w-48 h-48 bg-bio-deep/20 backdrop-blur-md rounded-xl border border-bio-light/10 flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500 shadow-2xl">
-                         <div className="text-bio-light/20 font-bold text-6xl">BP</div>
+                         {/* Placeholder Icon based on category if needed, keeping generic BP for now or use Package icon */}
+                         <Package size={64} className="text-bio-light/40" />
                       </div>
                    </div>
 
@@ -118,7 +136,7 @@ export default function ProductsPage() {
                 <div>
                   <div className="flex justify-between items-baseline mb-2">
                     <h3 className="text-xl font-medium text-bio-light group-hover:text-bio-primary transition-colors">{product.name}</h3>
-                    <span className="text-bio-accent font-medium">{product.price}</span>
+                    <span className="text-bio-accent font-medium text-sm">{product.price}</span>
                   </div>
                   <p className="text-bio-light/40 text-sm line-clamp-2">{product.description}</p>
                 </div>
@@ -128,8 +146,83 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* Why Our Product is the Best */}
+      <section className="py-24 px-6 bg-bio-deep/5 border-t border-bio-deep/20">
+          <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                  <h2 className="text-3xl md:text-5xl font-bold text-bio-light mb-6">Why Choose <span className="text-bio-primary">Biopack?</span></h2>
+                  <p className="text-bio-light/60 max-w-2xl mx-auto">We don&apos;t just make bags; we engineer trust, quality, and sustainability into every product.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* High Quality */}
+                  <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all">
+                      <div className="w-12 h-12 bg-bio-primary/10 rounded-xl flex items-center justify-center text-bio-primary mb-6">
+                          <Star size={24} />
+                      </div>
+                      <h3 className="text-xl font-bold text-bio-light mb-4">Unmatched Quality</h3>
+                      <ul className="space-y-2 text-bio-light/60 text-sm">
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-primary shrink-0" /> Strong, durable, tear-resistant</li>
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-primary shrink-0" /> Premium-grade raw materials</li>
+                      </ul>
+                  </div>
+
+                  {/* Certifications */}
+                  <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all">
+                      <div className="w-12 h-12 bg-bio-accent/10 rounded-xl flex items-center justify-center text-bio-accent mb-6">
+                          <ShieldCheck size={24} />
+                      </div>
+                      <h3 className="text-xl font-bold text-bio-light mb-4">Certified Trust</h3>
+                      <ul className="space-y-2 text-bio-light/60 text-sm">
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-accent shrink-0" /> CPCB Approved</li>
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-accent shrink-0" /> IS/ISO 17088 Standard</li>
+                      </ul>
+                  </div>
+
+                  {/* Branding */}
+                  <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all">
+                      <div className="w-12 h-12 bg-bio-deep/30 rounded-xl flex items-center justify-center text-bio-light mb-6">
+                          <Package size={24} />
+                      </div>
+                      <h3 className="text-xl font-bold text-bio-light mb-4">Professional Branding</h3>
+                      <ul className="space-y-2 text-bio-light/60 text-sm">
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-light shrink-0" /> Proper printing with certificate #</li>
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-light shrink-0" /> Eco-friendly design & packaging</li>
+                      </ul>
+                  </div>
+
+                  {/* Customer Trust */}
+                  <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all">
+                      <div className="w-12 h-12 bg-bio-light/10 rounded-xl flex items-center justify-center text-bio-light mb-6">
+                          <Truck size={24} />
+                      </div>
+                      <h3 className="text-xl font-bold text-bio-light mb-4">Customer First</h3>
+                      <ul className="space-y-2 text-bio-light/60 text-sm">
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-light shrink-0" /> Consistent supply chain</li>
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-light shrink-0" /> Competitive pricing</li>
+                          <li className="flex gap-2"><CheckCircle size={16} className="text-bio-light shrink-0" /> Reliable after-sales service</li>
+                      </ul>
+                  </div>
+
+                   {/* Innovation */}
+                   <div className="bg-bio-dark p-8 rounded-3xl border border-bio-light/10 hover:border-bio-primary/50 transition-all md:col-span-2 lg:col-span-2">
+                      <div className="w-12 h-12 bg-bio-primary/10 rounded-xl flex items-center justify-center text-bio-primary mb-6">
+                          <Zap size={24} />
+                      </div>
+                      <h3 className="text-xl font-bold text-bio-light mb-4">Constant Innovation</h3>
+                      <p className="text-bio-light/60 mb-4">We work across diverse industries including retail, hotels, agriculture, and waste management to develop new eco-friendly solutions.</p>
+                      <div className="flex flex-wrap gap-3">
+                          <span className="px-3 py-1 rounded-full bg-bio-light/5 border border-bio-light/10 text-xs text-bio-light/80">Retail</span>
+                          <span className="px-3 py-1 rounded-full bg-bio-light/5 border border-bio-light/10 text-xs text-bio-light/80">Hospitality</span>
+                          <span className="px-3 py-1 rounded-full bg-bio-light/5 border border-bio-light/10 text-xs text-bio-light/80">Agriculture</span>
+                          <span className="px-3 py-1 rounded-full bg-bio-light/5 border border-bio-light/10 text-xs text-bio-light/80">Waste Management</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
       <Footer />
     </main>
   );
 }
-

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ShoppingBag, Menu } from "lucide-react";
 
 export default function Navbar() {
@@ -7,9 +8,16 @@ export default function Navbar() {
 			<div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 				<Link
 					href="/"
-					className="text-2xl font-bold tracking-tighter text-bio-light"
+					className="flex items-center"
 				>
-					BIOPACK<span className="text-bio-primary">.</span>
+					<Image 
+						src="/logo.png" 
+						alt="Biopack Logo" 
+						width={180} 
+						height={60} 
+						className="h-12 w-auto object-contain" 
+						priority
+					/>
 				</Link>
 
 				<div className="hidden md:flex gap-8 items-center text-sm font-medium text-bio-light/80 uppercase tracking-wider">

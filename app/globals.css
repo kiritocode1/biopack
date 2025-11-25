@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-	--background: #050e05;
-	--foreground: #f4fbfe;
+	/* Light Mode Defaults */
+	--background: #f4fbfe;
+	--foreground: #050e05;
 
-	/* Custom Palette */
-	--color-bio-dark: #050e05;
+	/* Custom Palette - Inverted for Light Mode */
+	--color-bio-dark: #f4fbfe; /* Now acts as Light Background */
 	--color-bio-deep: #1f4e3b;
 	--color-bio-primary: #358c84;
 	--color-bio-accent: #58ccde;
-	--color-bio-light: #f4fbfe;
+	--color-bio-light: #050e05; /* Now acts as Dark Text */
 }
 
 @theme inline {
@@ -25,12 +26,7 @@
 	--color-bio-light: var(--color-bio-light);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #050e05;
-		--foreground: #f4fbfe;
-	}
-}
+/* Removed dark mode media query to enforce light mode */
 
 body {
 	background: var(--background);

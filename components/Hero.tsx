@@ -2,6 +2,7 @@
 
 import { ArrowRight, Leaf, Globe, Recycle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import GenerativeArtBackground from "./GenerativeArtBackground";
 import GenerativeArtCard from "./GenerativeArtCard";
 
@@ -28,10 +29,16 @@ export default function Hero() {
 						<span className="text-bio-light/80 text-xs font-medium tracking-widest uppercase">The Future of Packaging</span>
 					</div>
 
-					<h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-bio-light leading-[0.9]">
-						BIOPACK 
-						<span className="text-transparent bg-clip-text bg-linear-to-r from-bio-primary via-bio-accent to-bio-primary bg-[length:200%_auto] animate-bg-pan">.</span>
-					</h1>
+					<div className="mb-8">
+						<Image 
+							src="/logo.png" 
+							alt="Biopack Logo" 
+							width={400} 
+							height={150} 
+							className="h-24 md:h-32 w-auto object-contain origin-left"
+							priority
+						/>
+					</div>
 
 					<p className="text-xl md:text-2xl font-light text-bio-light/60 mb-10 max-w-xl leading-relaxed">
 						&quot;Green choice for better future.&quot; <br />
